@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.1] - 2024-12-02
+
+### Updated
+
+- **$PP Token Contract Address**: Updated to official Solana mint address `Axa4Ebtf7Q2yvyQ8dMidu6Qf17yZtsutAKEuKgdKpump`
+  - Token is now fully operational on Solana mainnet
+  - All holder discounts and payment discounts are now live
+  - Ready for production use with real $PP tokens
+
 ## [1.4.0] - 2024-11-30
 
 ### Added

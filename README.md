@@ -10,6 +10,44 @@ Self-hosted payment portal with 402/403 protocol and blockchain payment verifica
 - 🎯 **Flexible Pricing** - Set different prices for each accepted token
 - 🔄 **Per-Token Recipients** - Different recipient addresses per payment option
 
+## 🚀 Try the Demo
+
+Experience PayPortal with our interactive demo that includes a web UI and full API documentation:
+
+```bash
+# Clone the repository
+git clone https://github.com/PayPortalWeb3/PP.git
+cd portal
+
+# Install dependencies
+npm install
+
+# Start the demo (builds and runs demo server)
+npm run demo
+```
+
+Or if you've already built the project:
+
+```bash
+node demo-server.js
+```
+
+Then open your browser to:
+- **Interactive Demo**: http://localhost:3003/demo
+- **API Documentation (Swagger)**: http://localhost:3003/swagger
+- **Server Info**: http://localhost:3003/
+
+The demo runs with mock blockchains, so you can test all features without real crypto transactions!
+
+### What You Can Do in the Demo:
+
+1. ✨ **Create Payment Links** - Test single and multi-currency payment links
+2. 🔄 **Test Subscriptions** - Create recurring payment links
+3. 📱 **Generate QR Codes** - Get wallet-compatible QR codes
+4. 🧪 **Complete Payment Flow** - Test the entire 402 protocol flow
+5. 📊 **View Analytics** - See all links and payments
+6. 📚 **Explore API** - Full Swagger documentation with examples
+
 ## Features
 
 - 🔗 Create paid links with automatic payment verification

@@ -3,11 +3,9 @@
  * Native token support for Pay Portal
  * 
  * Token: $PP
- * Mint: [REPLACE_WITH_PP_TOKEN_MINT_ADDRESS]
+ * Mint: Axa4Ebtf7Q2yvyQ8dMidu6Qf17yZtsutAKEuKgdKpump
  * Chain: Solana
  * Decimals: 6 (standard pump.fun token)
- * 
- * ⚠️ CRITICAL: Replace MINT address with actual $PP token mint address before launch
  */
 
 import type { PaymentCheckResult } from './types.js';
@@ -16,8 +14,8 @@ import type { PaymentCheckResult } from './types.js';
  * Portal Token Constants ($PP)
  */
 export const PORTAL_TOKEN = {
-  /** Token mint address - ⚠️ REPLACE WITH ACTUAL $PP TOKEN ADDRESS */
-  MINT: '[REPLACE_WITH_PP_TOKEN_MINT_ADDRESS]',
+  /** Token mint address on Solana */
+  MINT: 'Axa4Ebtf7Q2yvyQ8dMidu6Qf17yZtsutAKEuKgdKpump',
   /** Token symbol */
   SYMBOL: 'PP',
   /** Token decimals (pump.fun standard) */

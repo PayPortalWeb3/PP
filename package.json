@@ -1,6 +1,6 @@
 {
   "name": "@payportal/portal",
-  "version": "1.0.0",
+  "version": "1.4.1",
   "description": "Self-hosted payment portal with 402/403 protocol support for blockchain payments. Supports EVM chains, Solana, QR codes, webhooks, subscriptions, multi-currency, and $PP token.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -22,6 +22,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
+    "demo": "npm run build && node demo-server.js",
     "test": "vitest run",
     "test:watch": "vitest",
     "prepublishOnly": "npm run build"
