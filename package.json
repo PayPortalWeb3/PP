@@ -2,6 +2,19 @@
   "name": "@payportal/portal",
   "version": "1.4.1",
   "description": "Self-hosted payment portal with 402/403 protocol support for blockchain payments. Supports EVM chains, Solana, QR codes, webhooks, subscriptions, multi-currency, and $PP token.",
+  "author": "PayPortal Team",
+  "homepage": "https://ppweb3.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PayPortalWeb3/PP.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PayPortalWeb3/PP/issues"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://ppweb3.vercel.app"
+  },
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -22,7 +35,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "demo": "npm run build && node demo-server.js",
+    "demo": "npm run build && node demo/demo-server.js",
     "test": "vitest run",
     "test:watch": "vitest",
     "prepublishOnly": "npm run build"
@@ -48,7 +61,6 @@
     "pay-portal",
     "$PP"
   ],
-  "author": "",
   "license": "MIT",
   "engines": {
     "node": ">=18.0.0"

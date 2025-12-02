@@ -1,0 +1,17 @@
+node_modules
+npm-debug.log
+.git
+.gitignore
+.env
+.env.*
+*.md
+!README.md
+spec/
+lib/
+demo/
+*.ts
+tsconfig.json
+tsup.config.ts
+vitest.config.ts
+.github/
+
