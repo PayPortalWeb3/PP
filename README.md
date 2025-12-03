@@ -164,10 +164,22 @@ server.start();
 | POST | `/pay/:id/subscribe` | Create or renew subscription |
 | GET | `/pay/:id/subscription?subscriber=ADDRESS` | Get subscription status |
 
+### Admin Panel
+
+Access the built-in admin dashboard at `/admin` to manage your PayPortal instance visually:
+
+- View and manage payment links
+- Monitor payments in real-time  
+- Manage subscriptions
+- Dashboard with stats
+
+Requires API key authentication (prompted on first visit).
+
 ### Admin Endpoints (require X-API-Key header)
 
 | Method | URL | Description |
 |--------|-----|-------------|
+| GET | `/admin` | Admin panel UI |
 | POST | `/api/links` | Create payment link |
 | GET | `/api/links` | List all links |
 | GET | `/api/links/:id` | Get link details |

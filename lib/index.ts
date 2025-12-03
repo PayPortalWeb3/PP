@@ -105,3 +105,7 @@ export {
   compareAmounts,
   REASON_MESSAGES,
 } from './utils.js';
+
+// Admin Panel
+export { generateAdminHTML } from './admin.js';
+export type { AdminPanelOptions } from './admin.js';

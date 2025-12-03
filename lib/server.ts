@@ -37,6 +37,7 @@ import {
   isInTrialPeriod,
   getIntervalDisplayName,
 } from './subscription.js';
+import { generateAdminHTML } from './admin.js';
 
 type Verifier = ChainVerifier | MockVerifier | SolanaVerifier | MockSolanaVerifier;
 
@@ -189,6 +190,9 @@ export class PortalServer {
         console.log('  GET    /api/links/:id   → Get link');
         console.log('  DELETE /api/links/:id   → Disable link');
         console.log('  GET    /api/payments    → List payments');
+        console.log('');
+        console.log('Admin Panel:');
+        console.log(`  ${this.config.baseUrl || 'http://localhost:' + this.config.port}/admin`);
         console.log('');
       }
     });
@@ -686,6 +690,25 @@ export class PortalServer {
       this.app.post('/api/subscriptions/:id/cancel', auth, this.apiCancelSubscription.bind(this));
       this.app.post('/api/subscriptions/:id/pause', auth, this.apiPauseSubscription.bind(this));
       this.app.post('/api/subscriptions/:id/resume', auth, this.apiResumeSubscription.bind(this));
+      
+      // Admin Panel UI
+      this.app.get('/admin', (req, res) => {
+        // Relax CSP for admin panel
+        res.removeHeader('Content-Security-Policy');
+        res.setHeader('Content-Type', 'text/html');
+        
+        const html = generateAdminHTML({
+          baseUrl: this.config.baseUrl || `http://localhost:${this.config.port}`,
+          basePath: this.config.basePath,
+          apiKey: this.config.apiKey,
+          chains: this.config.chains.map(c => ({
+            chainId: c.chainId,
+            name: c.name,
+            symbol: c.symbol,
+          })),
+        });
+        res.send(html);
+      });
     }
   }
 

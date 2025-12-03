@@ -1,6 +1,6 @@
 {
   "name": "@payportal/portal",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "Self-hosted payment portal with 402/403 protocol support for blockchain payments. Supports EVM chains, Solana, QR codes, webhooks, subscriptions, multi-currency, and $PP token.",
   "author": "PayPortal Team",
   "homepage": "https://ppweb3.vercel.app",

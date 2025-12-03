@@ -4,6 +4,10 @@
  * Each user runs this with their own RPC nodes.
  * 
  * Run: node example.js
+ * 
+ * Then visit:
+ *   - Admin Panel: http://localhost:3001/admin
+ *   - API Info: http://localhost:3001/
  */
 
 const { createServer } = require('./dist/index.js');
@@ -15,13 +19,13 @@ const server = createServer({
   baseUrl: 'http://localhost:3001', // Your domain
   apiKey: 'your-secret-api-key',      // Your API key
   
-  // YOUR OWN blockchain nodes
+  // YOUR OWN blockchain nodes (using mock for demo)
   chains: [
     {
       chainId: 1,
       name: 'Ethereum',
       symbol: 'ETH',
-      rpcUrl: process.env.ETH_RPC_URL || 'mock', // Your Alchemy/Infura/own node
+      rpcUrl: process.env.ETH_RPC_URL || 'mock',
       confirmations: 3,
     },
     {
@@ -32,11 +36,12 @@ const server = createServer({
       confirmations: 5,
     },
     {
-      chainId: 56,
-      name: 'BSC',
-      symbol: 'BNB',
-      rpcUrl: process.env.BSC_RPC_URL || 'mock',
-      confirmations: 3,
+      chainId: 101,
+      name: 'Solana',
+      symbol: 'SOL',
+      rpcUrl: process.env.SOLANA_RPC_URL || 'mock',
+      type: 'solana',
+      confirmations: 1,
     },
   ],
 });
@@ -44,8 +49,13 @@ const server = createServer({
 // Start the server
 server.start();
 
-// You can also create links programmatically
-async function createExampleLink() {
+console.log(`
+🎛️  Admin Panel: http://localhost:3001/admin
+    API Key: your-secret-api-key
+`);
+
+// Create a sample link on startup
+setTimeout(async () => {
   const link = await server.createPaymentLink({
     targetUrl: 'https://example.com/premium-content',
     price: {
@@ -54,13 +64,8 @@ async function createExampleLink() {
       chainId: 1,
     },
     recipientAddress: '0xYourWalletAddress',
-    description: 'Premium content access',
-    maxUses: 100,
+    description: 'Sample payment link',
   });
   
-  console.log('Created link:', link.id);
-  console.log('URL:', `http://localhost:3001/pay/${link.id}`);
-}
-
-// Uncomment to create a test link on startup
-// createExampleLink();
+  console.log(`✅ Sample link created: http://localhost:3001/pay/${link.id}`);
+}, 500);

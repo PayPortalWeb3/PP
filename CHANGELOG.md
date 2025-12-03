@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.0] - 2024-12-02
+
+### Added
+
+- **Admin Panel**: Built-in web UI for merchants to manage their PayPortal instance
+  - Access at `/admin` (protected by API key)
+  - View and manage payment links
+  - Monitor payments in real-time
+  - Manage subscriptions (pause, resume, cancel)
+  - Dashboard with stats (total links, payments, confirmed, active subs)
+  - Dark theme, responsive design
+  - No external dependencies - ships with PayPortal
+
+### New Exports
+- `generateAdminHTML()` - Generate admin panel HTML
+- `AdminPanelOptions` type
+
 ## [1.4.1] - 2024-12-02
 
 ### Updated
