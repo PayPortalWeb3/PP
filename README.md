@@ -56,6 +56,15 @@ The demo runs with mock blockchains, so you can test all features without real c
 5. 📊 **View Analytics** - See all links and payments
 6. 📚 **Explore API** - Full Swagger documentation with examples
 
+## Documentation
+
+| Document | Description |
+|----------|-------------|
+| [Why PayPortal?](WHY_PAYPORTAL.md) | Problems solved vs traditional payments |
+| [Target Markets](MARKETS.md) | Industries, use cases, go-to-market |
+| [Tokenomics](TOKENOMICS.md) | $PP token utility and mechanics |
+| [Whitepaper](https://ppweb3.vercel.app) | Technical deep-dive |
+
 ## Features
 
 - 🔗 Create paid links with automatic payment verification
